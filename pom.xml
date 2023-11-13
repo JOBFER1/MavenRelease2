@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>es.jobfer</groupId>
+    <artifactId>MavenRelease2</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>MavenRelease2</name>
+
+    <scm>
+        <url>https://github.com/JOBFER1/MavenRelease2</url> 
+        <connection>scm:git:https://github.com/JOBFER1/MavenRelease2.git</connection>
+<!--        <developerConnection>scm:git:https://github.com/JOBFER1/MavenRelease2.git</developerConnection>-->
+        <tag>@{project.version}</tag>
+    </scm>
+
+    <build>
+        <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <tagNameFormat>v@{project.version}</tagNameFormat>
+                    </configuration>
+                </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+       <repository>
+          <id>nexus-releases</id>
+          <url>http://localhost:8081/repository/maven-releases/</url>
+       </repository>
+    </distributionManagement>
+    
+</project>
